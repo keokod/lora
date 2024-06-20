@@ -1,4 +1,23 @@
+** information sur la carte 
 BN: LilyGo T-Display
 VID: 1a86
 PID: 55d4
 SN: 5185026367
+
+** test branchement ou se trouve la carte :
+root@debian:/dev# sudo dmesg | tail ==> carte usb branché
+[ 4695.452341] usb 2-3.2: Product: USB Single Serial
+[ 4695.452355] usb 2-3.2: SerialNumber: 5185026367
+[ 4695.460996] cdc_acm 2-3.2:1.0: ttyACM0: USB ACM device
+[ 4764.509568] usb 2-3.2: USB disconnect, device number 11
+[ 4770.149274] usb 2-3.2: new full-speed USB device number 12 using xhci_hcd
+[ 4770.251920] usb 2-3.2: New USB device found, idVendor=1a86, idProduct=55d4, bcdDevice= 4.43
+[ 4770.251938] usb 2-3.2: New USB device strings: Mfr=0, Product=2, SerialNumber=3
+[ 4770.251946] usb 2-3.2: Product: USB Single Serial
+[ 4770.251953] usb 2-3.2: SerialNumber: 5185026367
+[ 4770.263629] cdc_acm 2-3.2:1.0: ttyACM0: USB ACM device
+root@debian:/dev# ls | grep ttyACM  ==> care usb branché : dossier ou se trouve la carte
+ttyACM0
+root@debian:/dev# ls | grep ttyACM  ==> carte usb débranché : dossier disparu
+root@debian:/dev# 
+
